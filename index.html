@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Binita Thapa Magar | UI/UX Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+    .error-message {
+      color: red;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .success-message {
+      color: green;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <h1>Binita</h1>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#project">Project</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+ 
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <h2>Hello, I’m <span>Binita Thapa Magar</span></h2>
+      <p>I am a UI/UX Designer passionate about creating modern, user-friendly interfaces and seamless digital
+        experiences.</p>
+      <a href="#project"><button>View My Work</button></a>
+    </div>
+    <img src="assets/photo.jpg" alt="Binita Thapa Magar">
+  </section>
+
+ 
+  <section class="section" id="about">
+    <h2>About Me</h2>
+    <div class="about">
+      <img src="assets/photo.jpg" alt="About Binita">
+      <div class="about-text">
+        <h3>Hello! I'm Binita</h3>
+        <p>I am a dedicated UI/UX Designer with experience in creating user-friendly web and mobile interfaces. I focus
+          on combining functionality with aesthetic design to provide seamless user experiences. My skills include
+          Figma, HTML, CSS, JavaScript, PHP, and wireframing. I enjoy transforming ideas into visually appealing,
+          interactive digital products.</p>
+      </div>
+    </div>
+  </section>
+
+ 
+  <section class="section" id="services">
+    <h2>My Services</h2>
+    <div class="services">
+      <div class="service-box"><i class="fas fa-pencil-ruler"></i>
+        <h3>UI/UX Design</h3>
+      </div>
+      <div class="service-box"><i class="fas fa-mobile-alt"></i>
+        <h3>Responsive Design</h3>
+      </div>
+      <div class="service-box"><i class="fas fa-desktop"></i>
+        <h3>Website Design</h3>
+      </div>
+      <div class="service-box"><i class="fas fa-code"></i>
+        <h3>HTML & CSS</h3>
+      </div>
+      <div class="service-box"><i class="fab fa-js-square"></i>
+        <h3>JavaScript</h3>
+      </div>
+      <div class="service-box"><i class="fas fa-project-diagram"></i>
+        <h3>Wireframes</h3>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="project">
+    <h2>My Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <img src="assets/1.png" alt="BookMate Project">
+        <h3>BookMate</h3>
+        <p>
+          Online Hostel Booking System to create an easy-to-use online system that allows users
+          to search, book, and manage hostel accommodations efficiently.
+        </p>
+        <div class="tags">
+          <span>HTML</span>
+          <span>JavaScript</span>
+          <span>PHP</span>
+          <span>CSS</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/chrono.png" alt="Chrono Project">
+        <h3>Chrono</h3>
+        <p>
+          Chrono is a web application for schools to keep track of who's in class. It helps teachers
+          and students easily mark attendance online. It makes things quicker and simpler,
+          reducing paperwork and giving everyone an easy way to use it.
+        </p>
+        <div class="tags">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>PHP</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/wireframe.png" alt="Figma Wireframe Project">
+        <h3>Figma Wireframe Design</h3>
+        <p>
+          Designed interactive low-fidelity and high-fidelity wireframes in Figma
+          for mobile and web applications. Focused on usability, layout structure,
+          and user-centered design principles.
+        </p>
+        <div class="tags">
+          <span>Figma</span>
+          <span>UI/UX</span>
+          <span>Wireframe</span>
+          <span>Prototype</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section" id="contact">
+    <h2>Contact Me</h2>
+    <form class="contact-form" id="contactForm" novalidate>
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea rows="5" id="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+      <div id="form-message"></div>
+    </form>
+  </section>
+
+  
+  <footer>
+    <p>© 2025 Binita Thapa Magar | Designed with ❤️</p>
+  </footer>
+
+ 
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault(); 
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+      const formMessage = document.getElementById("form-message");
+
+      
+      formMessage.textContent = "";
+      formMessage.className = "";
+
+      
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,}$/i;
+
+      if (name === "" || email === "" || message === "") {
+        formMessage.textContent = "⚠️ Please fill out all fields.";
+        formMessage.className = "error-message";
+        return;
+      }
+
+      if (!emailPattern.test(email)) {
+        formMessage.textContent = "⚠️ Please enter a valid email address.";
+        formMessage.className = "error-message";
+        return;
+      }
+
+    
+      formMessage.textContent = "✅ Message sent successfully!";
+      formMessage.className = "success-message";
+
+    
+      document.getElementById("contactForm").reset();
+
+      setTimeout(() => {
+        formMessage.textContent = "";
+      }, 3000);
+    });
+  </script>
+
+</body>
+</html>
